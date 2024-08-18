@@ -22,14 +22,18 @@ CONSTRAINT bk PRIMARY KEY (performers_id, albums_id)
 CREATE TABLE IF NOT EXISTS albums (
 id serial PRIMARY KEY,
 name varchar(40) NOT NULL,
-year_of_release INTEGER
+year_of_release INTEGER,
+FOREIGN KEY (albums_id) REFERENCES albums(trak_id)
 );
 
 CREATE TABLE IF NOT EXISTS trak (
 id serial PRIMARY KEY,
-name varchar(40) NOT NULL,
-duration TEXT,
-albums TEXT
+coll_hot TEXT,
+green TEXT,
+viven_stop TEXT,
+red_hot TEXT,
+six_peace TEXT,
+chocolate TEXT
 );
 
 CREATE TABLE IF NOT EXISTS intermediate_table_2 (
@@ -41,5 +45,9 @@ CONSTRAINT bk PRIMARY KEY (trak_id, collection_id)
 CREATE TABLE IF NOT EXISTS collection (
 id serial PRIMARY KEY,
 name varchar(40) NOT NULL,
-year_of_release INTEGER
+year_of_release INTEGER,
+the_Best TEXT,
+greate_hit TEXT,
+nice TEXT,
+can TEXT
 );
